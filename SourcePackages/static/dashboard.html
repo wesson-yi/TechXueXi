@@ -25,23 +25,20 @@
                 $("#message tr:first").nextAll().remove();
                 for (const message of messages) {
                     if (-1 != message.text.indexOf("login.xuexi.cn")) {
-                        jump_url =
-                            "jump.html?" + get_app_jump_url(message.text);
+                        jump_url = "jump.html?" + get_app_jump_url(message.text);
 
                         $("#message table tr:first").after(
                             "<tr>" +
                                 "<td>" +
-                                "<span>" +
-                                message.timestamp +
-                                "</span>" +
+                                  "<span>" + message.timestamp + "</span>" +
                                 "</td>" +
                                 "<td>" +
-                                '<a target="_blank" href="' +
-                                jump_url +
-                                '">'+ "打开学习强国 APP" +
-                                "</a>" +
+                                  '<a style= "text-align: center" target="_blank" href="' +
+                                    jump_url +
+                                  '">'+ "打开学习强国 APP" +
+                                  "</a>" +
                                 "</td>" +
-                                "</tr>"
+                            "</tr>"
                         );
                     } else {
                         $("#message table tr:first").after(
@@ -73,7 +70,7 @@
                             "</span>" +
                             "</td>" +
                             "<td>" +
-                            '<img src="' +
+                            '<img style="width: 7rem;" src="' +
                             qrurl.url +
                             '"/>' +
                             "</td>" +
@@ -88,13 +85,9 @@
                     $("#user-status table").append(
                         "<tr>" +
                             "<td><button onclick=\"learn('" +
-                            u_info.uid +
-                            "')\">" +
-                            JSON.stringify(u_info.uid) +
+                            u_info.uid + "')\">" + u_info.uid +
                             "</button></td>" +
-                            "<td>" +
-                            JSON.stringify(u_info.status) +
-                            "</td>" +
+                            "<td>" + u_info.status + "</td>" +
                             "<td><button onclick=\"remove_cookie('" +
                             u_info.uid +
                             "')\">" +
@@ -254,15 +247,15 @@
         <style type="text/css">
 
             .main{
-                        background-color: rgba(102, 146, 191, 0.44);
-                        /*边框*/
-                        border: solid 1px rgba(102, 146, 191, 0.68);
-                        /*边角弧度*/
-                        border-radius: 10px;
-                        /*阴影*/
-                        -moz-box-shadow:2px 2px 5px #333333;
-                        -webkit-box-shadow:2px 2px 5px #333333;
-                        box-shadow: 7px 15px 30px #285a63;
+                    background-color: rgba(102, 146, 191, 0.44);
+                    /*边框*/
+                    border: solid 1px rgba(102, 146, 191, 0.68);
+                    /*边角弧度*/
+                    border-radius: 10px;
+                    /*阴影*/
+                    -moz-box-shadow:2px 2px 5px #333333;
+                    -webkit-box-shadow:2px 2px 5px #333333;
+                    box-shadow: 7px 15px 30px #285a63;
             }
             body {
                 width: auto;
@@ -272,18 +265,17 @@
             table {
                 width: 90%;
                 margin: 10px auto;
-		border-collapse: separate;
-		border-spacing: 0;
+                border-collapse: separate;
+                border-spacing: 0;
             }
 
-            th,
-            td {
+            th, td {
                 text-align: center;
                 border: 1px solid #ccc;
             }
 
             th {
-                background: #5a4c3b;
+                background: #9e8c6b;
                 font-weight: normal;
             }
 
@@ -292,7 +284,7 @@
             }
 
             tr:hover {
-                background: #cc0;
+                background: #ccc;
             }
 
             td a {
@@ -311,49 +303,51 @@
                 text-decoration: underline;
                 background-color: orangered;
             }
-	    table tr:first-child th:first-child {
-		    border-top-left-radius: 12px;
-		    border: 1px
-	    }
-	    table tr:first-child th:last-child {
-		    border-top-right-radius: 12px;
-		    border: 1px
-	    }
-	    table tr:last-child td{
-		    border-bottom: 1px solid #ccc;
-	    }
-	    table tr td:first-child{
-		    border-right: 0;
-	    }
-	    table tr td:last-child{
-		    border-right: 1px solid #ccc;
-	    }
-	    table tr td{
-		    border-bottom: 0;
-	    }
-	    table tr:last-child td:first-child {
-		    border-bottom-left-radius: 12px;
-	    }
-	    table tr:last-child td:last-child {
-		    border-bottom-right-radius: 12px;
-	    }
+            table tr:first-child {
+              height: 40px;
+              font-size: 19px;
+            }
+            table tr:first-child th {
+              border: 1px;
+            }
+            table tr:first-child th:first-child {
+              border-top-left-radius: 12px;
+            }
+            table tr:first-child th:last-child {
+              border-top-right-radius: 12px;
+            }
+            table tr:last-child td{
+              border-bottom: 1px solid #ccc;
+            }
+            table tr td:first-child{
+              border-right: 0;
+            }
+            table tr td:last-child{
+              border-right: 1px solid #ccc;
+            }
+            table tr td{
+              border-bottom: 0;
+            }
+            table tr:last-child td:first-child {
+              border-bottom-left-radius: 12px;
+            }
+            table tr:last-child td:last-child {
+              border-bottom-right-radius: 12px;
+            }
 
-	    button {
-		    width: 10rem;
-		    height: 40px;
-		    border-width: 0px;
+            button {
+                height: 37px;
+                border-width: 0px;
                 border-radius: 3px;
-                background: #9e8c6b;
+                background: #9E8C86;
                 cursor: pointer;
-                /* 鼠标移入按钮范围时出现手势 */
                 outline: none;
-                /* 不显示轮廓线 */
                 font-family: Microsoft YaHei;
-                /* 设置字体 */
                 color: white;
-                /* 字体颜色 */
                 font-size: 17px;
-                /* 字体大小 */
+            }
+            .console table button {
+              width: 10rem;
             }
 
             .login-button:hover {
@@ -365,15 +359,15 @@
 
     <body>
 
-        <div id="console" >
-            <div>
+        <div id="console">
+            <div class="console">
                 <table>
                     <caption>
                         <h2>操作台</h2>
                     </caption>
-		    <tr>
+                    <tr>
                         <th>使用说明</th>
-                        <th style="width: 40%">功能按钮</th>
+                        <th style="width: 40%">功能</th>
                     </tr>
 
                     <tr>
@@ -383,7 +377,7 @@
                             下面会自动刷新出二维码和链接
                             <br />
                             <br />
-			    保存二维码，学习强国扫一扫登录
+                            保存二维码，学习强国扫一扫登录
                             <br>
                             或者手机浏览器打开，点击链接，跳转APP登录
                         </td>
@@ -451,9 +445,9 @@
                         <h2>点击 UID 开始学习</h2>
                     </caption>
                     <tr>
-                        <th style="width: 40%">UID</th>
-                        <th>STATUS</th>
-                        <th>取消登录</th>
+                      <th style="width: 20%">UID</th>
+                      <th style="width: 40%">状态</th>
+                      <th style="width: 25%">功能</th>
                     </tr>
                 </table>
             </div>
@@ -463,8 +457,8 @@
                         <h2>消息区域</h2>
                     </caption>
                     <tr>
-                        <th style="width: 40%">timestamp</th>
-                        <th>message</th>
+                        <th style="width: 40%">Timestamp</th>
+                        <th>Content</th>
                     </tr>
                 </table>
             </div>
@@ -475,8 +469,8 @@
                        <h3>打开学习强国，扫一扫登录</h3>
                     </caption>
                     <tr>
-                        <th style="width: 40%">timestamp</th>
-                        <th>qrurl</th>
+                        <th style="width: 40%">Timestamp</th>
+                        <th>二维码</th>
                     </tr>
                 </table>
             </div>

@@ -1,5 +1,6 @@
 import json
 import os
+import pdb
 from re import T
 import time
 from datetime import date, datetime
@@ -157,7 +158,6 @@ def do_refresh_all_cookies(force):
 
 @app.route('/api/add')
 def add():
-
     filename = os.path.join('user', 'user_status.json')
     new = []
     bad_file_flag=False
@@ -185,10 +185,10 @@ def add():
             print("================================================")
 
     pdl.add_user()
-    sleep(3) and do_refresh_all_cookies(force=True)
+    sleep(1) and do_refresh_all_cookies(force=True)
 
-    pdl.start_learn(uid, None)
-    return web_log_and_resp_ok('ヾ(o◕∀◕)ﾉヾ☆ 登录成功，手动点击UID开始学习★ヾ(≧O≦)〃嗷~')
+    # pdl.start_learn(uid, None)
+    return web_log_and_resp_ok('(o◕∀◕) 登录成功，手动点击UID开始学习')
 
 
 @app.route('/api/learn')
