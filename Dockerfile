@@ -1,6 +1,6 @@
 FROM python:3.7-slim
 ARG usesource="https://github.com/wesson-yi/TechXueXi.git"
-ARG usebranche="developing"
+ARG usebranche="stage"
 ENV pullbranche=${usebranche}
 ENV Sourcepath=${usesource}
 
