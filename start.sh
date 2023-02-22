@@ -16,7 +16,7 @@ update() {
 
 if [[ ${pullbranche} == "developing" ]]; then
     echo "当前处于开发模式，自动更新"
-    update
+    # update
 fi
 #echo "检查更新"
 #git -C /xuexi/code/TechXueXi pull $Sourcepath $pullbranche
